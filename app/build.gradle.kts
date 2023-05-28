@@ -1,7 +1,11 @@
+import dependencies.Dependencies
+import dependencies.DebugDependencies
+
 plugins {
     id(BuildPlugins.ANDROID_APPLICATION)
     id(BuildPlugins.KOTLIN_ANDROID)
     id(BuildPlugins.KOTLIN_KAPT)
+    id(BuildPlugins.HILT)
 }
 
 android {
@@ -48,4 +52,12 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.9.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+
+    // HILT
+    implementation(Dependencies.HILT)
+    kapt(Dependencies.HILT_COMPILER)
+
+    implementation(Dependencies.TIMBER)
+
+    debugImplementation(DebugDependencies.STETHO)
 }
