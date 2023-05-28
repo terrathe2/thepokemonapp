@@ -48,14 +48,21 @@ android {
 }
 
 dependencies {
+    implementation(project(BuildModules.Commons.UI))
+
     implementation("androidx.core:core-ktx:1.7.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.9.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    implementation(Dependencies.MATERIAL)
+    implementation(Dependencies.CONSTRAINT_LAYOUT)
+    implementation(Dependencies.KOTLIN)
 
     // HILT
     implementation(Dependencies.HILT)
     kapt(Dependencies.HILT_COMPILER)
+
+    // Navigation
+    implementation(Dependencies.NAVIGATION_FRAGMENT)
+    implementation(Dependencies.NAVIGATION_UI)
 
     implementation(Dependencies.TIMBER)
 
