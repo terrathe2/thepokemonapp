@@ -1,12 +1,7 @@
 package commons
 
+import BuildModules.Commons
 import dependencies.Dependencies
-import gradle.kotlin.dsl.accessors._82d2c2d6084bd92195563500a586d689.android
-import gradle.kotlin.dsl.accessors._82d2c2d6084bd92195563500a586d689.implementation
-import gradle.kotlin.dsl.accessors._82d2c2d6084bd92195563500a586d689.kapt
-import gradle.kotlin.dsl.accessors._82d2c2d6084bd92195563500a586d689.kotlinOptions
-import org.gradle.api.JavaVersion
-import org.gradle.kotlin.dsl.dependencies
 
 plugins {
     id("com.android.library")
@@ -44,7 +39,10 @@ android {
 }
 
 dependencies {
+    implementation(project(Commons.UI))
+
     implementation(Dependencies.KOTLIN)
+    implementation(Dependencies.CONSTRAINT_LAYOUT)
     implementation(Dependencies.FRAGMENT_KTX)
     implementation(Dependencies.TIMBER)
 

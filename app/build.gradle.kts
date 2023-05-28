@@ -1,3 +1,5 @@
+import BuildModules.Commons
+import BuildModules.Features
 import dependencies.Dependencies
 import dependencies.DebugDependencies
 
@@ -48,7 +50,11 @@ android {
 }
 
 dependencies {
-    implementation(project(BuildModules.Commons.UI))
+    implementation(project(Commons.UI))
+
+    // Features Module
+    implementation(project(Features.POKEMON_LIST))
+    implementation(project(Features.MY_POKEMONS))
 
     implementation("androidx.core:core-ktx:1.7.0")
     implementation("androidx.appcompat:appcompat:1.6.1")

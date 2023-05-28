@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/pokemonListFragment"
+        android:icon="@drawable/ic_home_24"
+        android:title="PokeList" />
+    <item
+        android:id="@+id/myPokemonsFragment"
+        android:icon="@drawable/ic_pokeball_24"
+        android:title="My Pokemon" />
+</menu>

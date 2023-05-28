@@ -1,7 +1,6 @@
 package commons
 
 import dependencies.Dependencies
-import org.gradle.api.JavaVersion
 
 plugins {
     id("com.android.library")

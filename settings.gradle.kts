@@ -1,6 +1,8 @@
 include(
     ":app",
-    ":commons:ui"
+    ":commons:ui",
+    ":features:pokemonlist",
+    ":features:mypokemons"
 )
 
 rootProject.buildFileName = "build.gradle.kts"
