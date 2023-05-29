@@ -1,5 +1,6 @@
 import BuildModules.Commons
 import BuildModules.Features
+import com.android.build.api.variant.BuildConfigField
 import dependencies.Dependencies
 import dependencies.DebugDependencies
 
@@ -51,6 +52,7 @@ android {
 }
 
 dependencies {
+    implementation(project(BuildModules.CORE))
     implementation(project(Commons.UI))
 
     // Features Module
@@ -70,6 +72,9 @@ dependencies {
     // Navigation
     implementation(Dependencies.NAVIGATION_FRAGMENT)
     implementation(Dependencies.NAVIGATION_UI)
+
+    // Networking
+    implementation(Dependencies.RETROFIT)
 
     implementation(Dependencies.TIMBER)
 

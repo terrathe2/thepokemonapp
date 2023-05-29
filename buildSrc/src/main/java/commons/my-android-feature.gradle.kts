@@ -39,12 +39,15 @@ android {
 }
 
 dependencies {
+    implementation(project(BuildModules.CORE))
     implementation(project(Commons.UI))
 
     implementation(Dependencies.KOTLIN)
     implementation(Dependencies.CONSTRAINT_LAYOUT)
     implementation(Dependencies.FRAGMENT_KTX)
     implementation(Dependencies.TIMBER)
+    implementation(Dependencies.COROUTINES)
+    implementation(Dependencies.COROUTINES_ANDROID)
 
     // HILT
     implementation(Dependencies.HILT)
