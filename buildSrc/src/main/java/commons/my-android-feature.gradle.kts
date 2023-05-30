@@ -43,6 +43,7 @@ dependencies {
     implementation(project(Commons.UI))
 
     implementation(Dependencies.KOTLIN)
+    implementation(Dependencies.APPCOMPAT)
     implementation(Dependencies.CONSTRAINT_LAYOUT)
     implementation(Dependencies.FRAGMENT_KTX)
     implementation(Dependencies.TIMBER)

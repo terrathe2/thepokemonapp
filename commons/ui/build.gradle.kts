@@ -10,4 +10,5 @@ android {
 
 dependencies {
     implementation(Dependencies.FRAGMENT_KTX)
+    implementation(Dependencies.RECYCLE_VIEW)
 }

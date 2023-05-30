@@ -5,6 +5,7 @@ import com.redhaputra.commons.ui.model.PokemonData
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 import timber.log.Timber
+import java.util.Locale
 
 /**
  * Response Item for Pokemon List
@@ -26,7 +27,7 @@ fun PokemonListItemResponse.asExternalModel(): PokemonData {
     }
     val imgUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/$pokedexEntry.png"
     return PokemonData(
-        name = name,
+        name = name.replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() },
         imgUrl = imgUrl
     )
 }

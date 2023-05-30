@@ -14,6 +14,7 @@ interface PokemonService {
      * Get Pokemon list
      */
     @GET("pokemon")
+    @JvmSuppressWildcards
     suspend fun getPokemonList(
         @QueryMap query: Map<String, Any>
     ): Response<PokemonListResponse>

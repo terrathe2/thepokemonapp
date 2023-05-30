@@ -9,6 +9,10 @@
     <color name="white">#FFFFFFFF</color>
     <color name="main">#FFCB05</color>
     <color name="sub_main">#3466AF</color>
+    <color name="greyish_brown">#545454</color>
+
+    <color name="contentDescColor">#636363</color>
+    <color name="shimmerBgColor">#dddddd</color>
 
     <color name="bottom_nav_item">#21386E</color>
     <color name="bottom_nav_item_selected">#3466AF</color>

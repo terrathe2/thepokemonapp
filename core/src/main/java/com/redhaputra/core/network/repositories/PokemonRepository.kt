@@ -27,16 +27,13 @@ class PokemonRepository(
 
         try {
             val request = service.getPokemonList(queryMap)
-            Timber.d("Masuk sini ${request.isSuccessful}")
             if (request.isSuccessful) {
                 val body = request.body()
-                Timber.d("Masuk sini ${body?.pokemonList}")
                 return NetworkResponse.Success(body)
             }
 
             throw Exception("Unknown Error")
         } catch (e: Exception) {
-            Timber.d("Masuk sini error $e")
             if (e is IOException) {
                 return NetworkResponse.Error(e.message ?: "connection error", 0)
             }
