@@ -47,7 +47,7 @@
                 android:textColor="@android:color/black"
                 android:textSize="14sp"
                 android:textStyle="bold"
-                android:text="@{item.name}"
+                android:text="@{item.displayName}"
                 tools:text="Pikachu"
                 app:layout_constraintTop_toBottomOf="@id/ivPokemon"
                 app:layout_constraintStart_toStartOf="parent"

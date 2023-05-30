@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navGraph"
+    app:startDestination="@id/pokemonListFragment">
+
+    <fragment
+        android:id="@+id/pokemonListFragment"
+        android:name="com.redhaputra.pokemonlist.PokemonListFragment"
+        android:label="PokemonListFragment">
+
+        <action
+            android:id="@+id/action_pokemonListFragment_to_detailPokemonFragment"
+            app:destination="@id/detailPokemonFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/myPokemonsFragment"
+        android:name="com.redhaputra.mypokemons.MyPokemonsFragment"
+        android:label="MyPokemonsFragment" />
+
+    <fragment
+        android:id="@+id/detailPokemonFragment"
+        android:name="com.redhaputra.detailpokemon.DetailPokemonFragment"
+        android:label="DetailPokemonFragment" />
+
+</navigation>

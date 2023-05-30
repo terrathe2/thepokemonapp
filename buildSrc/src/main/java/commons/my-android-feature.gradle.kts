@@ -40,6 +40,7 @@ android {
 
 dependencies {
     implementation(project(BuildModules.CORE))
+    implementation(project(BuildModules.NAVIGATION))
     implementation(project(Commons.UI))
 
     implementation(Dependencies.KOTLIN)
@@ -49,6 +50,9 @@ dependencies {
     implementation(Dependencies.TIMBER)
     implementation(Dependencies.COROUTINES)
     implementation(Dependencies.COROUTINES_ANDROID)
+    implementation(Dependencies.NAVIGATION_FRAGMENT)
+    implementation(Dependencies.NAVIGATION_UI)
+    implementation(Dependencies.GLIDE)
 
     // HILT
     implementation(Dependencies.HILT)

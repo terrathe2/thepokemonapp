@@ -7,6 +7,7 @@ object Dependencies {
     const val CARD_VIEW = "androidx.cardview:cardview:${DependenciesVersions.CARD_VIEW}"
     const val CONSTRAINT_LAYOUT =
         "androidx.constraintlayout:constraintlayout:${DependenciesVersions.CONSTRAINT_LAYOUT}"
+    const val CORE = "androidx.core:core-ktx:${DependenciesVersions.CORE}"
     const val COROUTINES =
         "org.jetbrains.kotlinx:kotlinx-coroutines-core:${DependenciesVersions.COROUTINES}"
     const val COROUTINES_ANDROID =

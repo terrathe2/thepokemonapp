@@ -27,8 +27,9 @@ fun PokemonListItemResponse.asExternalModel(): PokemonData {
     }
     val imgUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/$pokedexEntry.png"
     return PokemonData(
-        name = name.replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() },
-        imgUrl = imgUrl
+        name = name,
+        displayName = name.replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() },
+        imgUrl = imgUrl,
     )
 }
 

@@ -2,6 +2,7 @@ object DependenciesVersions {
     const val APPCOMPAT = "1.6.1"
     const val CARD_VIEW = "1.0.0"
     const val CONSTRAINT_LAYOUT = "2.1.4"
+    const val CORE = "1.10.1"
     const val COROUTINES = "1.7.1"
     const val FRAGMENT_KTX = "1.5.7"
     const val GLIDE = "4.15.1"

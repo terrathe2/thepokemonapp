@@ -8,6 +8,7 @@ import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.redhaputra.commons.ui.extensions.autoCleared
 
 /**
@@ -20,7 +21,13 @@ abstract class BaseFragment<B : ViewDataBinding>(
     @LayoutRes
     private val layoutId: Int
 ) : Fragment() {
+
+    companion object {
+        private const val DELAY_CLICK = 500L
+    }
+
     var viewBinding: B by autoCleared<B>()
+    private var lastClick = 0L
 
     /**
      * Called to Initialize view data binding variables when fragment view is created.
@@ -40,5 +47,21 @@ abstract class BaseFragment<B : ViewDataBinding>(
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         onInitDataBinding()
+    }
+
+    protected fun safeToNavigate(targetDestination: Int? = null, safeAction: (Int) -> Unit) {
+        val availableDestination = if (targetDestination != null) {
+            findNavController().currentDestination?.getAction(targetDestination) != null
+        } else {
+            true
+        }
+        if (System.currentTimeMillis() - lastClick > DELAY_CLICK && availableDestination) {
+            lastClick = System.currentTimeMillis()
+            if (targetDestination != null) {
+                safeAction(targetDestination)
+            } else {
+                safeAction(0) // set '0' as default action
+            }
+        }
     }
 }
