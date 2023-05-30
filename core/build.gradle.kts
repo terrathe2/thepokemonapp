@@ -12,7 +12,7 @@ android {
 
 dependencies {
     implementation(project(Commons.UI))
-
+    implementation(Dependencies.NAVIGATION_UI)
     implementation(Dependencies.MOSHI_KTX)
     implementation(Dependencies.RETROFIT)
     implementation(Dependencies.RETROFIT_CONVERTER_MOSHI)

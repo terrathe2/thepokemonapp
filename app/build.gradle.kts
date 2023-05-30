@@ -53,13 +53,15 @@ android {
 
 dependencies {
     implementation(project(BuildModules.CORE))
+    implementation(project(BuildModules.NAVIGATION))
     implementation(project(Commons.UI))
 
     // Features Module
     implementation(project(Features.POKEMON_LIST))
     implementation(project(Features.MY_POKEMONS))
+    implementation(project(Features.DETAIL_POKEMON))
 
-    implementation("androidx.core:core-ktx:1.10.1")
+    implementation(Dependencies.CORE)
     implementation(Dependencies.APPCOMPAT)
     implementation(Dependencies.MATERIAL)
     implementation(Dependencies.CONSTRAINT_LAYOUT)

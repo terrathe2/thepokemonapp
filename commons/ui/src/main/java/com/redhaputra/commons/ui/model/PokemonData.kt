@@ -7,6 +7,7 @@ import androidx.annotation.Keep
  */
 @Keep
 data class PokemonData(
+    val displayName: String,
+    val imgUrl: String,
     val name: String,
-    val imgUrl: String
 )

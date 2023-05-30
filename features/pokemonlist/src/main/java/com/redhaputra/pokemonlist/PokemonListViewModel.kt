@@ -61,7 +61,6 @@ class PokemonListViewModel @Inject constructor(
      */
     fun onRefresh() {
         viewModelScope.launch {
-            Timber.d("masuk sini refresh")
             setRefresh(true)
             _refreshEvent.emit("refresh")
         }

@@ -1,11 +1,13 @@
 <resources>
     <string name="app_name">Pokemon App</string>
-
-    <string name="empty_pokemon_list_desc">Pokemon List is empty</string>
-    <string name="load_more_title">An error occurred, failed to load more</string>
-    <string name="load_more_desc">Tap to reload</string>
+    <string name="catch_poke">Catch!!</string>
 
     <!-- Content Description -->
     <string name="cd_loading_icon">Loading Icon</string>
     <string name="cd_pokemon_image">Pokemon Image</string>
+    <string name="cd_back_icon">Back Icon</string>
+
+    <string name="empty_pokemon_list_desc">Pokemon List is empty</string>
+    <string name="load_more_title">An error occurred, failed to load more</string>
+    <string name="load_more_desc">Tap to reload</string>
 </resources>

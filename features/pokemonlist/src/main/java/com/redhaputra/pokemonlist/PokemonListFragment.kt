@@ -3,15 +3,20 @@ package com.redhaputra.pokemonlist
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.paging.CombinedLoadStates
 import androidx.paging.LoadState
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.redhaputra.commons.ui.Constants.POKEMON_NAME_KEY
 import com.redhaputra.commons.ui.base.BaseFragment
+import com.redhaputra.core.shared.SharedMainViewModel
 import com.redhaputra.pokemonlist.adapter.PokemonListLoadStateAdapter
 import com.redhaputra.pokemonlist.adapter.PokemonListPagingAdapter
 import com.redhaputra.pokemonlist.databinding.FragmentPokemonListBinding
@@ -30,6 +35,8 @@ class PokemonListFragment :
     PokemonListListener {
 
     private val viewModel: PokemonListViewModel by viewModels()
+    private val sharedViewModel: SharedMainViewModel by activityViewModels()
+
     private val adapter by lazy {
         PokemonListPagingAdapter(this, Glide.with(this)).apply {
             stateRestorationPolicy = RecyclerView.Adapter.StateRestorationPolicy.PREVENT_WHEN_EMPTY
@@ -43,12 +50,23 @@ class PokemonListFragment :
         setupPagingListener()
     }
 
+    override fun onStart() {
+        super.onStart()
+        sharedViewModel.toggleBottomBar(true)
+    }
+
     override fun onInitDataBinding() {
         viewBinding.viewModel = viewModel
     }
 
     override fun onClick(pokemonName: String?) {
         // go to detail pokemon
+        safeToNavigate {
+            findNavController().navigate(
+                R.id.action_pokemonListFragment_to_detailPokemonFragment,
+                bundleOf(POKEMON_NAME_KEY to pokemonName)
+            )
+        }
     }
 
     private fun setupPagingAdapter() {

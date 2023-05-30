@@ -70,7 +70,7 @@
                         android:fontFamily="sans-serif"
                         android:textStyle="normal"
                         android:textSize="12sp"
-                        android:textColor="@color/contentDescColor"
+                        android:textColor="@color/content_desc_color"
                         android:letterSpacing="0.04"
                         android:lineSpacingExtra="2sp"
                         android:text="@string/load_more_desc"
