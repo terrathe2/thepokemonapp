@@ -1,4 +1,4 @@
-package com.redhaputra.commons.ui
+package com.redhaputra.commons.ui.base
 
 import android.os.Bundle
 import android.view.LayoutInflater

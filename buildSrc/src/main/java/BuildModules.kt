@@ -1,4 +1,5 @@
 object BuildModules {
+    const val CORE = ":core"
 
     object Commons {
         const val UI = ":commons:ui"

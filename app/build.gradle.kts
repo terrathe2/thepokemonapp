@@ -1,5 +1,6 @@
 import BuildModules.Commons
 import BuildModules.Features
+import com.android.build.api.variant.BuildConfigField
 import dependencies.Dependencies
 import dependencies.DebugDependencies
 
@@ -11,6 +12,7 @@ plugins {
 }
 
 android {
+    namespace = BuildAndroidConfig.APPLICATION_ID
     compileSdk = BuildAndroidConfig.COMPILE_SDK_VERSION
 
     defaultConfig {
@@ -40,24 +42,25 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_1_8.toString()
+        jvmTarget = JavaVersion.VERSION_17.toString()
     }
 }
 
 dependencies {
+    implementation(project(BuildModules.CORE))
     implementation(project(Commons.UI))
 
     // Features Module
     implementation(project(Features.POKEMON_LIST))
     implementation(project(Features.MY_POKEMONS))
 
-    implementation("androidx.core:core-ktx:1.7.0")
-    implementation("androidx.appcompat:appcompat:1.6.1")
+    implementation("androidx.core:core-ktx:1.10.1")
+    implementation(Dependencies.APPCOMPAT)
     implementation(Dependencies.MATERIAL)
     implementation(Dependencies.CONSTRAINT_LAYOUT)
     implementation(Dependencies.KOTLIN)
@@ -69,6 +72,9 @@ dependencies {
     // Navigation
     implementation(Dependencies.NAVIGATION_FRAGMENT)
     implementation(Dependencies.NAVIGATION_UI)
+
+    // Networking
+    implementation(Dependencies.RETROFIT)
 
     implementation(Dependencies.TIMBER)
 

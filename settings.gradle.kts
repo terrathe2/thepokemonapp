@@ -1,5 +1,6 @@
 include(
     ":app",
+    ":core",
     ":commons:ui",
     ":features:pokemonlist",
     ":features:mypokemons"
