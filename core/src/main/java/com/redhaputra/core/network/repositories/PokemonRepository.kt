@@ -37,10 +37,10 @@ class PokemonRepository(
             throw Exception("Unknown Error")
         } catch (e: Exception) {
             if (e is IOException) {
-                return NetworkResponse.Error(e.message ?: "connection error", 0)
+                return NetworkResponse.Error(e.message ?: "connection error")
             }
 
-            return NetworkResponse.Error(e.message ?: "server error", 99)
+            return NetworkResponse.Error(e.message ?: "server error")
         }
     }
 
@@ -60,10 +60,10 @@ class PokemonRepository(
             throw Exception("Unknown Error")
         } catch (e: Exception) {
             if (e is IOException) {
-                return NetworkResponse.Error(e.message ?: "connection error", 0)
+                return NetworkResponse.Error(e.message ?: "connection error")
             }
 
-            return NetworkResponse.Error(e.message ?: "server error", 99)
+            return NetworkResponse.Error(e.message ?: "server error")
         }
     }
 
